@@ -1,0 +1,468 @@
+<div class="min-w-screen 
+            min-h-screen 
+            bg-gradient-to-t
+            from-slate-700
+            to-slate-800 
+            flex 
+            items-center 
+            justify-center 
+            px-5 py-5">
+
+    <div class="w-full 
+                mx-auto 
+                rounded-md 
+                shadow-2xl
+                text-gray-800 
+                relative 
+                overflow-hidden 
+                contain">
+
+        <h1 class="text-center 
+                   text-white 
+                   py-10 
+                   text-2xl 
+                   font-bold">
+
+            Angular Calculator
+        
+        </h1>
+
+        <!-- Calculator Screen -->
+        <div class="w-full 
+                    h-600 
+                    bg-gradient-to-b 
+                    from-slate-800 
+                    from-slate-700 
+                    text-right">
+
+            <!-- Function Screen -->
+            <div class="w-full 
+                        py-5 px-6 
+                        text-2xl
+                        text-white 
+                        font-thin">
+                
+                {{functionName}}
+           
+            </div>
+            <!-- End Function Screen -->
+
+            <!-- Number Screen -->
+            <div class="w-full 
+                        py-5 
+                        px-6 
+                        text-6xl
+                        text-white
+                        font-thin">
+
+                {{calValue | number}}
+
+            </div>
+            <!-- End Number Screen -->
+
+            <!-- First Button Row -->
+            <div class="flex w-full bg-gradient-to-b from-blue-600 to bg-blue-700">
+
+                <!-- Start Clear Button -->
+                <div class="w-2/4 
+                            border-r 
+                            border-b
+                            border-blue-400">
+
+                    <button class="w-full 
+                                   h-16 
+                                   outline-none 
+                                   hover:bg-blue-700
+                                   hover:bg-opacitiy-20
+                                   text-white 
+                                   text-opacity-75
+                                   text-2xl
+                                   font-light"
+                                   (click)="onClickButton('c', 'function')">
+                
+                        C
+                                   
+                    </button>
+
+                </div>
+                <!-- End Clear Button -->
+
+
+                <!-- Start Percentage Button -->
+                <div class="w-1/4 border-r border-b border-blue-400">
+                    
+                    <button class="w-full 
+                                   h-16 
+                                   outline-none
+                                   focus:outline-none
+                                   hover:bg-blue-700
+                                   hover:bg-opacity-50
+                                   text-xl
+                                   text-opacity-75
+                                   font-light
+                                   text-white"
+                                   (click)="onClickButton('%', 'function')">
+
+                        %
+
+                    </button>
+                </div>
+                <!-- End Percentage Button -->
+
+                <!-- Start Divide Button -->
+                <div class="w-1/4 border-r border-b border-blue-400">
+                    
+                    <button class="w-full 
+                                   h-16 
+                                   outline-none
+                                   focus:outline-none
+                                   hover:bg-blue-700
+                                   hover:bg-opacity-50
+                                   text-xl
+                                   text-opacity-75
+                                   font-light
+                                   text-white"
+                                   (click)="onClickButton('/', 'function')">
+
+                        /
+
+                    </button>
+                </div>
+                <!-- End Divide Button -->
+
+            </div>
+            <!-- End First Button Row -->
+
+
+            <!-- Start Second Button Row -->
+            <div class="flex w-full bg-gradient-to-b from-blue-600 to bg-blue-700">
+
+                <!-- Start 7 Button -->
+                <div class="w-1/4 border-r border-b border-blue-400">
+                    
+                    <button class="w-full 
+                                   h-16 
+                                   outline-none
+                                   focus:outline-none
+                                   hover:bg-blue-700
+                                   hover:bg-opacity-50
+                                   text-xl
+                                   text-opacity-75
+                                   font-light
+                                   text-white"
+                                   (click)="onClickButton('7', 'number')">
+
+                        7
+
+                    </button>
+                </div>
+                <!-- End 7 Button -->
+
+
+                <!-- Start 8 Button -->
+                <div class="w-1/4 border-r border-b border-blue-400">
+                    
+                    <button class="w-full 
+                                   h-16 
+                                   outline-none
+                                   focus:outline-none
+                                   hover:bg-blue-700
+                                   hover:bg-opacity-50
+                                   text-xl
+                                   text-opacity-75
+                                   font-light
+                                   text-white"
+                                   (click)="onClickButton('8', 'number')">
+
+                        8
+
+                    </button>
+                </div>
+                <!-- End 8 Button -->
+
+                <!-- Start 9 Button -->
+                <div class="w-1/4 border-r border-b border-blue-400">
+                    
+                    <button class="w-full 
+                                   h-16 
+                                   outline-none
+                                   focus:outline-none
+                                   hover:bg-blue-700
+                                   hover:bg-opacity-50
+                                   text-xl
+                                   text-opacity-75
+                                   font-light
+                                   text-white"
+                                   (click)="onClickButton('9', 'number')">
+
+                        9
+
+                    </button>
+                </div>
+                <!-- End 9 Button -->
+   
+                <!-- Start * Button -->
+                <div class="w-1/4 border-r border-b border-blue-400">
+                    
+                    <button class="w-full 
+                                   h-16 
+                                   outline-none
+                                   focus:outline-none
+                                   hover:bg-blue-700
+                                   hover:bg-opacity-50
+                                   text-xl
+                                   text-opacity-75
+                                   font-light
+                                   text-white"
+                                   (click)="onClickButton('*', 'function')">
+
+                        *
+
+                    </button>
+                </div>
+                <!-- End * Button -->
+
+            </div>
+            <!-- End Second Button Row -->
+
+
+            <!-- Start Third Button Row -->
+            <div class="flex w-full bg-gradient-to-b from-blue-600 to bg-blue-700">
+
+                <!-- Start 4 Button -->
+                <div class="w-1/4 border-r border-b border-blue-400">
+                    
+                    <button class="w-full 
+                                   h-16 
+                                   outline-none
+                                   focus:outline-none
+                                   hover:bg-blue-700
+                                   hover:bg-opacity-50
+                                   text-xl
+                                   text-opacity-75
+                                   font-light
+                                   text-white"
+                                   (click)="onClickButton('4', 'number')">
+
+                        4
+
+                    </button>
+                </div>
+                <!-- End 4 Button -->
+
+
+                <!-- Start 5 Button -->
+                <div class="w-1/4 border-r border-b border-blue-400">
+                    
+                    <button class="w-full 
+                                   h-16 
+                                   outline-none
+                                   focus:outline-none
+                                   hover:bg-blue-700
+                                   hover:bg-opacity-50
+                                   text-xl
+                                   text-opacity-75
+                                   font-light
+                                   text-white"
+                                   (click)="onClickButton('5', 'number')">
+
+                        5
+
+                    </button>
+                </div>
+                <!-- End 5 Button -->
+
+                <!-- Start 6 Button -->
+                <div class="w-1/4 border-r border-b border-blue-400">
+                    
+                    <button class="w-full 
+                                   h-16 
+                                   outline-none
+                                   focus:outline-none
+                                   hover:bg-blue-700
+                                   hover:bg-opacity-50
+                                   text-xl
+                                   text-opacity-75
+                                   font-light
+                                   text-white"
+                                   (click)="onClickButton('6', 'number')">
+
+                        6
+
+                    </button>
+                </div>
+                <!-- End 6 Button -->
+   
+                <!-- Start - Button -->
+                <div class="w-1/4 border-r border-b border-blue-400">
+                    
+                    <button class="w-full 
+                                   h-16 
+                                   outline-none
+                                   focus:outline-none
+                                   hover:bg-blue-700
+                                   hover:bg-opacity-50
+                                   text-xl
+                                   text-opacity-75
+                                   font-light
+                                   text-white"
+                                   (click)="onClickButton('-', 'function')">
+
+                        -
+
+                    </button>
+                </div>
+                <!-- End - Button -->
+
+            </div>
+            <!-- End Third Button Row -->
+
+
+            <!-- Start Fourth Button Row -->
+            <div class="flex w-full bg-gradient-to-b from-blue-600 to bg-blue-700">
+
+                <!-- Start 1 Button -->
+                <div class="w-1/4 border-r border-b border-blue-400">
+                    
+                    <button class="w-full 
+                                   h-16 
+                                   outline-none
+                                   focus:outline-none
+                                   hover:bg-blue-700
+                                   hover:bg-opacity-50
+                                   text-xl
+                                   text-opacity-75
+                                   font-light
+                                   text-white"
+                                   (click)="onClickButton('1', 'number')">
+
+                        1
+
+                    </button>
+                </div>
+                <!-- End 1 Button -->
+
+
+                <!-- Start 2 Button -->
+                <div class="w-1/4 border-r border-b border-blue-400">
+                    
+                    <button class="w-full 
+                                   h-16 
+                                   outline-none
+                                   focus:outline-none
+                                   hover:bg-blue-700
+                                   hover:bg-opacity-50
+                                   text-xl
+                                   text-opacity-75
+                                   font-light
+                                   text-white"
+                                   (click)="onClickButton('2', 'number')">
+
+                        2
+
+                    </button>
+                </div>
+                <!-- End 2 Button -->
+
+                <!-- Start 3 Button -->
+                <div class="w-1/4 border-r border-b border-blue-400">
+                    
+                    <button class="w-full 
+                                   h-16 
+                                   outline-none
+                                   focus:outline-none
+                                   hover:bg-blue-700
+                                   hover:bg-opacity-50
+                                   text-xl
+                                   text-opacity-75
+                                   font-light
+                                   text-white"
+                                   (click)="onClickButton('3', 'number')">
+
+                        3
+
+                    </button>
+                </div>
+                <!-- End 3 Button -->
+   
+                <!-- Start + Button -->
+                <div class="w-1/4 border-r border-b border-blue-400">
+                    
+                    <button class="w-full 
+                                   h-16 
+                                   outline-none
+                                   focus:outline-none
+                                   hover:bg-blue-700
+                                   hover:bg-opacity-50
+                                   text-xl
+                                   text-opacity-75
+                                   font-light
+                                   text-white"
+                                   (click)="onClickButton('+', 'function')">
+
+                        +
+
+                    </button>
+                </div>
+                <!-- End + Button -->
+
+            </div>
+            <!-- End Fourth Button Row -->
+
+            <!-- Start Fifth Button Row -->
+            <div class="flex w-full bg-gradient-to-b from-blue-600 to bg-blue-700">
+
+                <!-- Start 0 Button -->
+                <div class="w-1/4 border-r border-b border-blue-400">
+                    
+                    <button class="w-full 
+                                   h-16 
+                                   outline-none
+                                   focus:outline-none
+                                   hover:bg-blue-700
+                                   hover:bg-opacity-50
+                                   text-xl
+                                   text-opacity-75
+                                   font-light
+                                   text-white"
+                                   (click)="onClickButton('0', 'number')">
+
+                        0
+
+                    </button>
+                </div>
+                <!-- End 0 Button -->
+
+                <!-- Start = Button -->
+                <div class="w-3/4 border-r border-b border-blue-400">
+                    
+                    <button class="w-full 
+                                   h-16 
+                                   outline-none
+                                   focus:outline-none
+                                   hover:bg-blue-700
+                                   hover:bg-opacity-50
+                                   text-xl
+                                   text-opacity-75
+                                   font-light
+                                   text-white"
+                                   (click)="onClickButton('=', 'function')">
+
+                        =
+
+                    </button>
+                </div>
+                <!-- End = Button -->
+
+            </div>
+            <!-- End Fifth Button Row -->
+
+
+
+        </div>
+        <!-- End Calculator Screen -->
+
+    </div>
+
+
+</div>
